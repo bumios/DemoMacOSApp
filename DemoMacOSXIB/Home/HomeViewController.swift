@@ -12,6 +12,7 @@ final class HomeViewController: NSViewController {
     @IBOutlet private weak var inputTextField: NSTextField!
     @IBOutlet private weak var submitButton: NSButton!
     @IBOutlet private weak var tableView: NSTableView!
+    @IBOutlet private weak var dragView: DragView!
 
     let viewModel = HomeViewModel()
 
@@ -19,6 +20,7 @@ final class HomeViewController: NSViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        dragView.delegate = self
     }
 
     @IBAction func submitButtonTapped(_ sender: Any) {
@@ -27,6 +29,12 @@ final class HomeViewController: NSViewController {
         } else {
 //            titleLabel.stringValue = inputTextField.stringValue
         }
+    }
+}
+
+extension HomeViewController: DragViewDelegate {
+    func dragViewDidReceive(fileURLs: [URL]) {
+        print("-----", fileURLs)
     }
 }
 

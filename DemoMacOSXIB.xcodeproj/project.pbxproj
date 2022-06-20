@@ -18,6 +18,7 @@
 		3ABCDE69283CBDFB00AB4DC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABCDE67283CBDFB00AB4DC4 /* LoginViewController.swift */; };
 		3ABCDE6A283CBDFB00AB4DC4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ABCDE68283CBDFB00AB4DC4 /* LoginViewController.xib */; };
 		3ADE0044283CC5EE000A091F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADE0043283CC5EE000A091F /* HomeViewModel.swift */; };
+		59673E8728604FD000EA36ED /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59673E8628604FD000EA36ED /* DragView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3ABCDE67283CBDFB00AB4DC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3ABCDE68283CBDFB00AB4DC4 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		3ADE0043283CC5EE000A091F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		59673E8628604FD000EA36ED /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		3ABCDE61283CBB4C00AB4DC4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				59673E8528604FD000EA36ED /* DragView */,
 				3AA94C2F283DD23700F6B3A3 /* Cell */,
 				3ABCDE63283CBB4C00AB4DC4 /* HomeViewController.swift */,
 				3ABCDE62283CBB4C00AB4DC4 /* HomeViewController.xib */,
@@ -155,6 +158,14 @@
 				3ABCDE68283CBDFB00AB4DC4 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		59673E8528604FD000EA36ED /* DragView */ = {
+			isa = PBXGroup;
+			children = (
+				59673E8628604FD000EA36ED /* DragView.swift */,
+			);
+			path = DragView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 				3ABCDE35283C803100AB4DC4 /* AppDelegate.swift in Sources */,
 				3ABCDE65283CBB4C00AB4DC4 /* HomeViewController.swift in Sources */,
 				3ADE0044283CC5EE000A091F /* HomeViewModel.swift in Sources */,
+				59673E8728604FD000EA36ED /* DragView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
