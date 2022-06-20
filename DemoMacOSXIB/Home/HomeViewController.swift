@@ -30,6 +30,13 @@ final class HomeViewController: NSViewController {
 //            titleLabel.stringValue = inputTextField.stringValue
         }
     }
+
+    private func openPDFUrl() {
+        let url = URL(string: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf")!
+        if NSWorkspace.shared.open(url) {
+            print("default browser was successfully opened")
+        }
+    }
 }
 
 extension HomeViewController: DragViewDelegate {
