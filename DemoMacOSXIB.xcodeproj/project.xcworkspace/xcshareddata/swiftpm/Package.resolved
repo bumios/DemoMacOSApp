@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftyftp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alexsteinerde/SwiftyFTP.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "b7a0f72cfcd9d371865832c703898c3dc2f075b3"
+      }
+    }
+  ],
+  "version" : 2
+}

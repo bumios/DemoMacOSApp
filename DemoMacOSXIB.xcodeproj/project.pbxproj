@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D42683F37EE5E2C3CA1F97F /* Pods_DemoMacOSXIB_DemoMacOSXIBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A3EE29B9A43479D8A243D2 /* Pods_DemoMacOSXIB_DemoMacOSXIBUITests.framework */; };
+		3AAF64472862C2E00044B1D7 /* DummyFile.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3AAF64462862C2E00044B1D7 /* DummyFile.zip */; };
 		3ABCDE35283C803100AB4DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABCDE34283C803100AB4DC4 /* AppDelegate.swift */; };
 		3ABCDE37283C803100AB4DC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABCDE36283C803100AB4DC4 /* Assets.xcassets */; };
 		3ABCDE3A283C803100AB4DC4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ABCDE38283C803100AB4DC4 /* MainMenu.xib */; };
@@ -17,8 +19,14 @@
 		3ABCDE65283CBB4C00AB4DC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABCDE63283CBB4C00AB4DC4 /* HomeViewController.swift */; };
 		3ABCDE69283CBDFB00AB4DC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABCDE67283CBDFB00AB4DC4 /* LoginViewController.swift */; };
 		3ABCDE6A283CBDFB00AB4DC4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ABCDE68283CBDFB00AB4DC4 /* LoginViewController.xib */; };
+		3ABFD11A28656F09002BF48B /* QuickDummyFile.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3ABFD11928656F09002BF48B /* QuickDummyFile.zip */; };
 		3ADE0044283CC5EE000A091F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADE0043283CC5EE000A091F /* HomeViewModel.swift */; };
+		3AE37EB32861ABBA0095FFD1 /* FTPUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE37EB22861ABBA0095FFD1 /* FTPUpload.swift */; };
+		3AE37EB72861AE540095FFD1 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE37EB52861AE540095FFD1 /* CustomAlertViewController.swift */; };
+		3AE37EB82861AE540095FFD1 /* CustomAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE37EB62861AE540095FFD1 /* CustomAlertViewController.xib */; };
 		59673E8728604FD000EA36ED /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59673E8628604FD000EA36ED /* DragView.swift */; };
+		ABE37D4311DFE1731DCC0A91 /* Pods_DemoMacOSXIB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CCBBE6CF68401F6E68E7232 /* Pods_DemoMacOSXIB.framework */; };
+		E689096275AD09E601E41451 /* Pods_DemoMacOSXIBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8622957EA1A1C45385F5E40 /* Pods_DemoMacOSXIBTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EE0FCB5D3CA7D201A7578D0 /* Pods-DemoMacOSXIBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMacOSXIBTests.debug.xcconfig"; path = "Target Support Files/Pods-DemoMacOSXIBTests/Pods-DemoMacOSXIBTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1CCBBE6CF68401F6E68E7232 /* Pods_DemoMacOSXIB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoMacOSXIB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2405267D00CD12FADCA967A3 /* Pods-DemoMacOSXIBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMacOSXIBTests.release.xcconfig"; path = "Target Support Files/Pods-DemoMacOSXIBTests/Pods-DemoMacOSXIBTests.release.xcconfig"; sourceTree = "<group>"; };
+		28EA3D85B6244F8DE8966ABF /* Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig"; path = "Target Support Files/Pods-DemoMacOSXIB-DemoMacOSXIBUITests/Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3A9A4E762863283300E58ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3AAF64462862C2E00044B1D7 /* DummyFile.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = DummyFile.zip; sourceTree = "<group>"; };
 		3ABCDE31283C803100AB4DC4 /* DemoMacOSXIB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoMacOSXIB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABCDE34283C803100AB4DC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ABCDE36283C803100AB4DC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,8 +67,17 @@
 		3ABCDE63283CBB4C00AB4DC4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3ABCDE67283CBDFB00AB4DC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3ABCDE68283CBDFB00AB4DC4 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		3ABFD11928656F09002BF48B /* QuickDummyFile.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = QuickDummyFile.zip; sourceTree = "<group>"; };
 		3ADE0043283CC5EE000A091F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3AE37EB22861ABBA0095FFD1 /* FTPUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTPUpload.swift; sourceTree = "<group>"; };
+		3AE37EB52861AE540095FFD1 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		3AE37EB62861AE540095FFD1 /* CustomAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAlertViewController.xib; sourceTree = "<group>"; };
 		59673E8628604FD000EA36ED /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+		66853C5D13ACECA9F441FEF5 /* Pods-DemoMacOSXIB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMacOSXIB.debug.xcconfig"; path = "Target Support Files/Pods-DemoMacOSXIB/Pods-DemoMacOSXIB.debug.xcconfig"; sourceTree = "<group>"; };
+		D7E20520EEBB5C7D2FBFD551 /* Pods-DemoMacOSXIB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMacOSXIB.release.xcconfig"; path = "Target Support Files/Pods-DemoMacOSXIB/Pods-DemoMacOSXIB.release.xcconfig"; sourceTree = "<group>"; };
+		DF476502DF642004853EC06A /* Pods-DemoMacOSXIB-DemoMacOSXIBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMacOSXIB-DemoMacOSXIBUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoMacOSXIB-DemoMacOSXIBUITests/Pods-DemoMacOSXIB-DemoMacOSXIBUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E2A3EE29B9A43479D8A243D2 /* Pods_DemoMacOSXIB_DemoMacOSXIBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoMacOSXIB_DemoMacOSXIBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8622957EA1A1C45385F5E40 /* Pods_DemoMacOSXIBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoMacOSXIBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE37D4311DFE1731DCC0A91 /* Pods_DemoMacOSXIB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E689096275AD09E601E41451 /* Pods_DemoMacOSXIBTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +101,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D42683F37EE5E2C3CA1F97F /* Pods_DemoMacOSXIB_DemoMacOSXIBUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11DDEEC53184DEBCCCF92F41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CCBBE6CF68401F6E68E7232 /* Pods_DemoMacOSXIB.framework */,
+				E2A3EE29B9A43479D8A243D2 /* Pods_DemoMacOSXIB_DemoMacOSXIBUITests.framework */,
+				F8622957EA1A1C45385F5E40 /* Pods_DemoMacOSXIBTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3AA94C2F283DD23700F6B3A3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +132,8 @@
 				3ABCDE43283C803200AB4DC4 /* DemoMacOSXIBTests */,
 				3ABCDE4D283C803200AB4DC4 /* DemoMacOSXIBUITests */,
 				3ABCDE32283C803100AB4DC4 /* Products */,
+				BEEC92C2D330004A2A799C70 /* Pods */,
+				11DDEEC53184DEBCCCF92F41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +150,7 @@
 		3ABCDE33283C803100AB4DC4 /* DemoMacOSXIB */ = {
 			isa = PBXGroup;
 			children = (
+				3A9A4E762863283300E58ECA /* Info.plist */,
 				3ABCDE34283C803100AB4DC4 /* AppDelegate.swift */,
 				3ABCDE66283CBDEB00AB4DC4 /* Login */,
 				3ABCDE61283CBB4C00AB4DC4 /* Home */,
@@ -142,11 +181,15 @@
 		3ABCDE61283CBB4C00AB4DC4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3AE37EB42861AE350095FFD1 /* CustomAlert */,
 				59673E8528604FD000EA36ED /* DragView */,
 				3AA94C2F283DD23700F6B3A3 /* Cell */,
 				3ABCDE63283CBB4C00AB4DC4 /* HomeViewController.swift */,
 				3ABCDE62283CBB4C00AB4DC4 /* HomeViewController.xib */,
 				3ADE0043283CC5EE000A091F /* HomeViewModel.swift */,
+				3AE37EB22861ABBA0095FFD1 /* FTPUpload.swift */,
+				3ABFD11928656F09002BF48B /* QuickDummyFile.zip */,
+				3AAF64462862C2E00044B1D7 /* DummyFile.zip */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -160,12 +203,34 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		3AE37EB42861AE350095FFD1 /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				3AE37EB52861AE540095FFD1 /* CustomAlertViewController.swift */,
+				3AE37EB62861AE540095FFD1 /* CustomAlertViewController.xib */,
+			);
+			path = CustomAlert;
+			sourceTree = "<group>";
+		};
 		59673E8528604FD000EA36ED /* DragView */ = {
 			isa = PBXGroup;
 			children = (
 				59673E8628604FD000EA36ED /* DragView.swift */,
 			);
 			path = DragView;
+			sourceTree = "<group>";
+		};
+		BEEC92C2D330004A2A799C70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66853C5D13ACECA9F441FEF5 /* Pods-DemoMacOSXIB.debug.xcconfig */,
+				D7E20520EEBB5C7D2FBFD551 /* Pods-DemoMacOSXIB.release.xcconfig */,
+				28EA3D85B6244F8DE8966ABF /* Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig */,
+				DF476502DF642004853EC06A /* Pods-DemoMacOSXIB-DemoMacOSXIBUITests.release.xcconfig */,
+				0EE0FCB5D3CA7D201A7578D0 /* Pods-DemoMacOSXIBTests.debug.xcconfig */,
+				2405267D00CD12FADCA967A3 /* Pods-DemoMacOSXIBTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,15 +240,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3ABCDE54283C803200AB4DC4 /* Build configuration list for PBXNativeTarget "DemoMacOSXIB" */;
 			buildPhases = (
+				E9D5B0A1153D03BFDB426F68 /* [CP] Check Pods Manifest.lock */,
 				3ABCDE2D283C803100AB4DC4 /* Sources */,
 				3ABCDE2E283C803100AB4DC4 /* Frameworks */,
 				3ABCDE2F283C803100AB4DC4 /* Resources */,
+				BDA6973B36A76DB67771BE27 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = DemoMacOSXIB;
+			packageProductDependencies = (
+			);
 			productName = DemoMacOSXIB;
 			productReference = 3ABCDE31283C803100AB4DC4 /* DemoMacOSXIB.app */;
 			productType = "com.apple.product-type.application";
@@ -192,6 +261,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3ABCDE57283C803200AB4DC4 /* Build configuration list for PBXNativeTarget "DemoMacOSXIBTests" */;
 			buildPhases = (
+				BDBBE11974E83E02BACB4A8F /* [CP] Check Pods Manifest.lock */,
 				3ABCDE3C283C803200AB4DC4 /* Sources */,
 				3ABCDE3D283C803200AB4DC4 /* Frameworks */,
 				3ABCDE3E283C803200AB4DC4 /* Resources */,
@@ -210,9 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3ABCDE5A283C803200AB4DC4 /* Build configuration list for PBXNativeTarget "DemoMacOSXIBUITests" */;
 			buildPhases = (
+				103127E020896AE305804504 /* [CP] Check Pods Manifest.lock */,
 				3ABCDE46283C803200AB4DC4 /* Sources */,
 				3ABCDE47283C803200AB4DC4 /* Frameworks */,
 				3ABCDE48283C803200AB4DC4 /* Resources */,
+				8CC3C06D7AF234AC20FDCD29 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +328,8 @@
 				Base,
 			);
 			mainGroup = 3ABCDE28283C803100AB4DC4;
+			packageReferences = (
+			);
 			productRefGroup = 3ABCDE32283C803100AB4DC4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -272,6 +346,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ABFD11A28656F09002BF48B /* QuickDummyFile.zip in Resources */,
+				3AAF64472862C2E00044B1D7 /* DummyFile.zip in Resources */,
+				3AE37EB82861AE540095FFD1 /* CustomAlertViewController.xib in Resources */,
 				3ABCDE6A283CBDFB00AB4DC4 /* LoginViewController.xib in Resources */,
 				3ABCDE37283C803100AB4DC4 /* Assets.xcassets in Resources */,
 				3ABCDE3A283C803100AB4DC4 /* MainMenu.xib in Resources */,
@@ -295,6 +372,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		103127E020896AE305804504 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoMacOSXIB-DemoMacOSXIBUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CC3C06D7AF234AC20FDCD29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoMacOSXIB-DemoMacOSXIBUITests/Pods-DemoMacOSXIB-DemoMacOSXIBUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoMacOSXIB-DemoMacOSXIBUITests/Pods-DemoMacOSXIB-DemoMacOSXIBUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoMacOSXIB-DemoMacOSXIBUITests/Pods-DemoMacOSXIB-DemoMacOSXIBUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDA6973B36A76DB67771BE27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoMacOSXIB/Pods-DemoMacOSXIB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoMacOSXIB/Pods-DemoMacOSXIB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoMacOSXIB/Pods-DemoMacOSXIB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDBBE11974E83E02BACB4A8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoMacOSXIBTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9D5B0A1153D03BFDB426F68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoMacOSXIB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3ABCDE2D283C803100AB4DC4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -303,7 +483,9 @@
 				3ABCDE69283CBDFB00AB4DC4 /* LoginViewController.swift in Sources */,
 				3ABCDE35283C803100AB4DC4 /* AppDelegate.swift in Sources */,
 				3ABCDE65283CBB4C00AB4DC4 /* HomeViewController.swift in Sources */,
+				3AE37EB32861ABBA0095FFD1 /* FTPUpload.swift in Sources */,
 				3ADE0044283CC5EE000A091F /* HomeViewModel.swift in Sources */,
+				3AE37EB72861AE540095FFD1 /* CustomAlertViewController.swift in Sources */,
 				59673E8728604FD000EA36ED /* DragView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +649,7 @@
 		};
 		3ABCDE55283C803200AB4DC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66853C5D13ACECA9F441FEF5 /* Pods-DemoMacOSXIB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -474,7 +657,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DemoMacOSXIB/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -492,6 +677,7 @@
 		};
 		3ABCDE56283C803200AB4DC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7E20520EEBB5C7D2FBFD551 /* Pods-DemoMacOSXIB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -499,7 +685,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DemoMacOSXIB/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -517,6 +705,7 @@
 		};
 		3ABCDE58283C803200AB4DC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EE0FCB5D3CA7D201A7578D0 /* Pods-DemoMacOSXIBTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -535,6 +724,7 @@
 		};
 		3ABCDE59283C803200AB4DC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2405267D00CD12FADCA967A3 /* Pods-DemoMacOSXIBTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -553,6 +743,7 @@
 		};
 		3ABCDE5B283C803200AB4DC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28EA3D85B6244F8DE8966ABF /* Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -569,6 +760,7 @@
 		};
 		3ABCDE5C283C803200AB4DC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF476502DF642004853EC06A /* Pods-DemoMacOSXIB-DemoMacOSXIBUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

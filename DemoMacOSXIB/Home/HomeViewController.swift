@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import NMSSH
 
 final class HomeViewController: NSViewController {
 
@@ -21,14 +22,25 @@ final class HomeViewController: NSViewController {
         tableView.delegate = self
         tableView.dataSource = self
         dragView.delegate = self
+        testUploadFilesToFTP()
     }
 
+    var alert: NSAlert?
+
     @IBAction func submitButtonTapped(_ sender: Any) {
-        if inputTextField.stringValue.isEmpty {
-//            titleLabel.stringValue = "Please input on text box above"
-        } else {
-//            titleLabel.stringValue = inputTextField.stringValue
-        }
+//        if inputTextField.stringValue.isEmpty {
+////            titleLabel.stringValue = "Please input on text box above"
+//        } else {
+////            titleLabel.stringValue = inputTextField.stringValue
+//        }
+
+        // MARK: - Show custom alert
+//        let vc = CustomAlertViewController()
+//        let anotherWindow = NSWindow(contentViewController: vc)
+//        anotherWindow.makeKeyAndOrderFront(self)
+
+        // MARK: - Show alert
+//        showAlert()
     }
 
     private func openPDFUrl() {
@@ -37,8 +49,17 @@ final class HomeViewController: NSViewController {
             print("default browser was successfully opened")
         }
     }
+
+    private func showAlert() {
+        alert = NSAlert.init()
+        alert?.messageText = "Title of message"
+        alert?.informativeText = "Message description"
+        alert?.addButton(withTitle: "OK")
+        alert?.beginSheetModal(for: AppDelegate.shared.window)
+    }
 }
 
+// MARK: - Drag file's/folder's
 extension HomeViewController: DragViewDelegate {
     func dragViewDidReceive(fileURLs: [URL]) {
         print("-----", fileURLs)
@@ -110,5 +131,80 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/YYYY"
         return dateFormatter.string(from: date)
+    }
+}
+
+// MARK: - SFTP connect
+extension HomeViewController {
+
+    enum FTPUploadResult {
+        case processing(FTPUploadProgress)
+        case failure(Error)
+    }
+
+    struct FTPConfig {
+        static let host: String = ""
+        static let port: Int = 22
+        static let username: String = ""
+        static let password: String = ""
+        static let folderPath: String = "/MyFolderOnFTPServer"
+    }
+
+    struct FTPUploadProgress {
+        let originalBytes: Int
+        let uploadedBytes: UInt
+
+        var isFinished: Bool {
+            uploadedBytes >= originalBytes
+        }
+
+        var percent: Double {
+            (Double(uploadedBytes) / Double(originalBytes)) * 100
+        }
+    }
+
+    private func testUploadFilesToFTP() {
+        guard let fileUrl = Bundle.main.url(forResource: "DummyFile", withExtension: "zip") else { fatalError("🧨 File not found") }
+        let uuid = UUID().uuidString
+        let fileName = "Duy, Tran [\(uuid)]-[001].zip"
+        uploadToFTPServer(from: fileUrl, with: fileName, completion: { result in
+            switch result {
+            case .processing(let progress):
+                if progress.isFinished {
+                    print("Uploaded to FTP: \(progress.uploadedBytes) bytes, percent: \(progress.percent)")
+                } else {
+                    print("Uploading: \(progress.uploadedBytes), percent: \(progress.percent)")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        })
+    }
+
+    func uploadToFTPServer(from fileUrl: URL, with fileName: String, completion: @escaping ((FTPUploadResult) -> Void)) {
+        let session = NMSSHSession.init(host: FTPConfig.host, port: FTPConfig.port, andUsername: FTPConfig.username)
+        session.connect()
+        if session.isConnected {
+            session.authenticate(byPassword: FTPConfig.password)
+            if session.isAuthorized {
+                let sftpSession = NMSFTP(session: session)
+                sftpSession.connect()
+                if sftpSession.isConnected {
+                    do {
+                        if try fileUrl.checkResourceIsReachable() {
+                            let data = try Data(contentsOf: fileUrl, options: [.alwaysMapped, .uncached])
+                            let ftpRemotePath = FTPConfig.folderPath + "/\(fileName)"
+                            sftpSession.writeContents(data, toFileAtPath: ftpRemotePath) { progress in
+                                let currentProgress = FTPUploadProgress(originalBytes: data.count, uploadedBytes: progress)
+                                completion(.processing(currentProgress))
+                                return true
+                            }
+                        }
+                    } catch {
+                        completion(.failure(error))
+                    }
+                }
+            }
+        }
     }
 }
