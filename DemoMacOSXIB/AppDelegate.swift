@@ -24,14 +24,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.contentViewController = vc
     }
 
-    func changeRootToLogin() {
-        let vc = LoginViewController()
-        window.contentViewController = vc
-    }
+    func changeRoot(to rootType: RootType) {
+        var vc: NSViewController
+        switch rootType {
+        case .home:
+            vc = HomeViewController()
+        case .login:
+            vc = LoginViewController()
+        case .detail:
+            vc = DetailInformationViewController()
+        }
 
-    func changeRootToHome() {
-        let vc = HomeViewController()
         window.contentViewController = vc
+        window.center()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -40,5 +45,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
         return true
+    }
+}
+
+extension AppDelegate {
+
+    enum RootType {
+        case home
+        case login
+        case detail
     }
 }

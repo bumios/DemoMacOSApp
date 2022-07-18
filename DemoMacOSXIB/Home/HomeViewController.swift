@@ -7,6 +7,7 @@
 
 import Cocoa
 import NMSSH
+import CwlUtils
 
 final class HomeViewController: NSViewController {
 
@@ -22,7 +23,6 @@ final class HomeViewController: NSViewController {
         tableView.delegate = self
         tableView.dataSource = self
         dragView.delegate = self
-        testUploadFilesToFTP()
     }
 
     var alert: NSAlert?
@@ -40,7 +40,7 @@ final class HomeViewController: NSViewController {
 //        anotherWindow.makeKeyAndOrderFront(self)
 
         // MARK: - Show alert
-//        showAlert()
+        showAlert()
     }
 
     private func openPDFUrl() {
@@ -59,19 +59,14 @@ final class HomeViewController: NSViewController {
     }
 }
 
-// MARK: - Drag file's/folder's
-extension HomeViewController: DragViewDelegate {
-    func dragViewDidReceive(fileURLs: [URL]) {
-        print("-----", fileURLs)
-    }
-}
-
+// MARK: - Extension NSTableViewDataSource
 extension HomeViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return viewModel.numberOfRows()
     }
 }
 
+// MARK: - Extension NSTableViewDelegate
 extension HomeViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let user = viewModel.getUser(at: row)
@@ -119,6 +114,7 @@ extension HomeViewController: NSTableViewDelegate {
     }
 }
 
+// MARK: - Class IdentityInfoCellView
 class IdentityInfoCellView: NSTableCellView {
     @IBOutlet weak var dateLabel: NSTextField?
     @IBOutlet weak var placeLabel: NSTextField?
@@ -134,7 +130,14 @@ extension Date {
     }
 }
 
-// MARK: - SFTP connect
+// MARK: - Drag file's/folder's
+extension HomeViewController: DragViewDelegate {
+    func dragViewDidReceive(fileURLs: [URL]) {
+        print("-----", fileURLs)
+    }
+}
+
+// MARK: - SFTP connect & upload
 extension HomeViewController {
 
     enum FTPUploadResult {
@@ -206,5 +209,22 @@ extension HomeViewController {
                 }
             }
         }
+    }
+}
+
+// MARK: - Library CwlUtils
+extension HomeViewController {
+    func printHardwareInformation() {
+        print("cpuFreq: \(Sysctl.cpuFreq)")
+        print("activeCPUs: \(Sysctl.activeCPUs)")
+        print("hostName: \(Sysctl.hostName)")
+        print("machine: \(Sysctl.machine)")
+        print("memSize: \(Sysctl.memSize)")
+        print("model: \(Sysctl.model)")
+        print("osRelease: \(Sysctl.osRelease)")
+        print("osRev: \(Sysctl.osRev)")
+        print("osType: \(Sysctl.osType)")
+        print("osVersion: \(Sysctl.osVersion)")
+        print("version: \(Sysctl.version)")
     }
 }

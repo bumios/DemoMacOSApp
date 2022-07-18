@@ -7,6 +7,8 @@ target 'DemoMacOSXIB' do
 
   # Pods for DemoMacOSXIB
 	pod 'NMSSH'
+  pod 'ZIPFoundation'
+  pod 'CwlUtils'
 
   target 'DemoMacOSXIBTests' do
     inherit! :search_paths

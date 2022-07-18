@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D42683F37EE5E2C3CA1F97F /* Pods_DemoMacOSXIB_DemoMacOSXIBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2A3EE29B9A43479D8A243D2 /* Pods_DemoMacOSXIB_DemoMacOSXIBUITests.framework */; };
+		3A635DB9287EA98400C2244F /* DetailInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A635DB7287EA98400C2244F /* DetailInformationViewController.swift */; };
+		3A635DBA287EA98400C2244F /* DetailInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A635DB8287EA98400C2244F /* DetailInformationViewController.xib */; };
+		3A9E3A0C28753757005A759D /* CwlUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9E3A0B28753757005A759D /* CwlUtils */; };
 		3AAF64472862C2E00044B1D7 /* DummyFile.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3AAF64462862C2E00044B1D7 /* DummyFile.zip */; };
 		3ABCDE35283C803100AB4DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABCDE34283C803100AB4DC4 /* AppDelegate.swift */; };
 		3ABCDE37283C803100AB4DC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABCDE36283C803100AB4DC4 /* Assets.xcassets */; };
@@ -51,6 +54,8 @@
 		1CCBBE6CF68401F6E68E7232 /* Pods_DemoMacOSXIB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoMacOSXIB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2405267D00CD12FADCA967A3 /* Pods-DemoMacOSXIBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMacOSXIBTests.release.xcconfig"; path = "Target Support Files/Pods-DemoMacOSXIBTests/Pods-DemoMacOSXIBTests.release.xcconfig"; sourceTree = "<group>"; };
 		28EA3D85B6244F8DE8966ABF /* Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig"; path = "Target Support Files/Pods-DemoMacOSXIB-DemoMacOSXIBUITests/Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3A635DB7287EA98400C2244F /* DetailInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformationViewController.swift; sourceTree = "<group>"; };
+		3A635DB8287EA98400C2244F /* DetailInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInformationViewController.xib; sourceTree = "<group>"; };
 		3A9A4E762863283300E58ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3AAF64462862C2E00044B1D7 /* DummyFile.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = DummyFile.zip; sourceTree = "<group>"; };
 		3ABCDE31283C803100AB4DC4 /* DemoMacOSXIB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoMacOSXIB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABE37D4311DFE1731DCC0A91 /* Pods_DemoMacOSXIB.framework in Frameworks */,
+				3A9E3A0C28753757005A759D /* CwlUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +122,15 @@
 				F8622957EA1A1C45385F5E40 /* Pods_DemoMacOSXIBTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A635DAE287EA8D000C2244F /* Detail Information */ = {
+			isa = PBXGroup;
+			children = (
+				3A635DB7287EA98400C2244F /* DetailInformationViewController.swift */,
+				3A635DB8287EA98400C2244F /* DetailInformationViewController.xib */,
+			);
+			path = "Detail Information";
 			sourceTree = "<group>";
 		};
 		3AA94C2F283DD23700F6B3A3 /* Cell */ = {
@@ -150,13 +165,14 @@
 		3ABCDE33283C803100AB4DC4 /* DemoMacOSXIB */ = {
 			isa = PBXGroup;
 			children = (
-				3A9A4E762863283300E58ECA /* Info.plist */,
 				3ABCDE34283C803100AB4DC4 /* AppDelegate.swift */,
-				3ABCDE66283CBDEB00AB4DC4 /* Login */,
-				3ABCDE61283CBB4C00AB4DC4 /* Home */,
 				3ABCDE36283C803100AB4DC4 /* Assets.xcassets */,
-				3ABCDE38283C803100AB4DC4 /* MainMenu.xib */,
 				3ABCDE3B283C803100AB4DC4 /* DemoMacOSXIB.entitlements */,
+				3A635DAE287EA8D000C2244F /* Detail Information */,
+				3ABCDE61283CBB4C00AB4DC4 /* Home */,
+				3A9A4E762863283300E58ECA /* Info.plist */,
+				3ABCDE66283CBDEB00AB4DC4 /* Login */,
+				3ABCDE38283C803100AB4DC4 /* MainMenu.xib */,
 			);
 			path = DemoMacOSXIB;
 			sourceTree = "<group>";
@@ -252,6 +268,7 @@
 			);
 			name = DemoMacOSXIB;
 			packageProductDependencies = (
+				3A9E3A0B28753757005A759D /* CwlUtils */,
 			);
 			productName = DemoMacOSXIB;
 			productReference = 3ABCDE31283C803100AB4DC4 /* DemoMacOSXIB.app */;
@@ -329,6 +346,7 @@
 			);
 			mainGroup = 3ABCDE28283C803100AB4DC4;
 			packageReferences = (
+				3A9E3A0A28753757005A759D /* XCRemoteSwiftPackageReference "CwlUtils" */,
 			);
 			productRefGroup = 3ABCDE32283C803100AB4DC4 /* Products */;
 			projectDirPath = "";
@@ -350,6 +368,7 @@
 				3AAF64472862C2E00044B1D7 /* DummyFile.zip in Resources */,
 				3AE37EB82861AE540095FFD1 /* CustomAlertViewController.xib in Resources */,
 				3ABCDE6A283CBDFB00AB4DC4 /* LoginViewController.xib in Resources */,
+				3A635DBA287EA98400C2244F /* DetailInformationViewController.xib in Resources */,
 				3ABCDE37283C803100AB4DC4 /* Assets.xcassets in Resources */,
 				3ABCDE3A283C803100AB4DC4 /* MainMenu.xib in Resources */,
 				3ABCDE64283CBB4C00AB4DC4 /* HomeViewController.xib in Resources */,
@@ -480,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A635DB9287EA98400C2244F /* DetailInformationViewController.swift in Sources */,
 				3ABCDE69283CBDFB00AB4DC4 /* LoginViewController.swift in Sources */,
 				3ABCDE35283C803100AB4DC4 /* AppDelegate.swift in Sources */,
 				3ABCDE65283CBB4C00AB4DC4 /* HomeViewController.swift in Sources */,
@@ -815,6 +835,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A9E3A0A28753757005A759D /* XCRemoteSwiftPackageReference "CwlUtils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattgallagher/CwlUtils.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A9E3A0B28753757005A759D /* CwlUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A9E3A0A28753757005A759D /* XCRemoteSwiftPackageReference "CwlUtils" */;
+			productName = CwlUtils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3ABCDE29283C803100AB4DC4 /* Project object */;
 }
