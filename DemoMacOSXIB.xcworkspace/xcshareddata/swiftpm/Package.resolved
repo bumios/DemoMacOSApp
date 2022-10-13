@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mattgallagher/CwlUtils.git",
       "state" : {
-        "revision" : "0bfc4587d01cfc796b6c7e118fc631333dd8ab33",
-        "version" : "3.0.0"
+        "branch" : "master",
+        "revision" : "f23c5419f239f3a5b9b25a317cce7d5f1f0abba2"
       }
     }
   ],

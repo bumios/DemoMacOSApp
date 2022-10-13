@@ -6,9 +6,8 @@ target 'DemoMacOSXIB' do
   use_frameworks!
 
   # Pods for DemoMacOSXIB
-	pod 'NMSSH'
+  pod 'NMSSH'
   pod 'ZIPFoundation'
-  pod 'CwlUtils'
 
   target 'DemoMacOSXIBTests' do
     inherit! :search_paths
