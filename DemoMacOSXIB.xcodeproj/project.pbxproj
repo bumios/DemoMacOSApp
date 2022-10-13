@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		130C2B93836F24253EEE34B9 /* Pods_DemoMacOSXIBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F6912F444BEBE245E470AD /* Pods_DemoMacOSXIBTests.framework */; };
 		3A55016728F7F04B00DB0394 /* CwlUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 3A55016628F7F04B00DB0394 /* CwlUtils */; };
+		3A55016B28F81A1F00DB0394 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A55016928F81A1F00DB0394 /* MainScreenViewController.swift */; };
+		3A55016C28F81A1F00DB0394 /* MainScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A55016A28F81A1F00DB0394 /* MainScreenViewController.xib */; };
 		3A635DB9287EA98400C2244F /* DetailInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A635DB7287EA98400C2244F /* DetailInformationViewController.swift */; };
 		3A635DBA287EA98400C2244F /* DetailInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A635DB8287EA98400C2244F /* DetailInformationViewController.xib */; };
 		3AAF64472862C2E00044B1D7 /* DummyFile.zip in Resources */ = {isa = PBXBuildFile; fileRef = 3AAF64462862C2E00044B1D7 /* DummyFile.zip */; };
@@ -53,6 +55,8 @@
 		0EA42C571648926268CC1816 /* Pods_DemoMacOSXIB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoMacOSXIB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C2189406FB7DF863FB6B51 /* Pods-DemoMacOSXIB-DemoMacOSXIBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMacOSXIB-DemoMacOSXIBUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoMacOSXIB-DemoMacOSXIBUITests/Pods-DemoMacOSXIB-DemoMacOSXIBUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1C0D9AE8C99FB3BC02D70AEE /* Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig"; path = "Target Support Files/Pods-DemoMacOSXIB-DemoMacOSXIBUITests/Pods-DemoMacOSXIB-DemoMacOSXIBUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3A55016928F81A1F00DB0394 /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreenViewController.swift; path = INPROGRESS/MainScreenViewController.swift; sourceTree = SOURCE_ROOT; };
+		3A55016A28F81A1F00DB0394 /* MainScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainScreenViewController.xib; path = INPROGRESS/MainScreenViewController.xib; sourceTree = SOURCE_ROOT; };
 		3A635DB7287EA98400C2244F /* DetailInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformationViewController.swift; sourceTree = "<group>"; };
 		3A635DB8287EA98400C2244F /* DetailInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInformationViewController.xib; sourceTree = "<group>"; };
 		3A9A4E762863283300E58ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -127,6 +131,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		3A55016828F81A0C00DB0394 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3A55016928F81A1F00DB0394 /* MainScreenViewController.swift */,
+				3A55016A28F81A1F00DB0394 /* MainScreenViewController.xib */,
+			);
+			path = "Main Screen";
+			sourceTree = "<group>";
+		};
 		3A635DAE287EA8D000C2244F /* Detail Information */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +181,7 @@
 		3ABCDE33283C803100AB4DC4 /* DemoMacOSXIB */ = {
 			isa = PBXGroup;
 			children = (
+				3A55016828F81A0C00DB0394 /* Main Screen */,
 				3ABCDE34283C803100AB4DC4 /* AppDelegate.swift */,
 				3ABCDE36283C803100AB4DC4 /* Assets.xcassets */,
 				3ABCDE3B283C803100AB4DC4 /* DemoMacOSXIB.entitlements */,
@@ -370,6 +384,7 @@
 				3AE37EB82861AE540095FFD1 /* CustomAlertViewController.xib in Resources */,
 				3ABCDE6A283CBDFB00AB4DC4 /* LoginViewController.xib in Resources */,
 				3A635DBA287EA98400C2244F /* DetailInformationViewController.xib in Resources */,
+				3A55016C28F81A1F00DB0394 /* MainScreenViewController.xib in Resources */,
 				3ABCDE37283C803100AB4DC4 /* Assets.xcassets in Resources */,
 				3ABCDE3A283C803100AB4DC4 /* MainMenu.xib in Resources */,
 				3ABCDE64283CBB4C00AB4DC4 /* HomeViewController.xib in Resources */,
@@ -508,6 +523,7 @@
 				3ADE0044283CC5EE000A091F /* HomeViewModel.swift in Sources */,
 				3AE37EB72861AE540095FFD1 /* CustomAlertViewController.swift in Sources */,
 				59673E8728604FD000EA36ED /* DragView.swift in Sources */,
+				3A55016B28F81A1F00DB0394 /* MainScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

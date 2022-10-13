@@ -15,7 +15,6 @@ final class MainScreenViewController: NSViewController {
         super.viewDidLoad()
         // Scroll to first item when screen loaded
         tableView.scrollToBeginningOfDocument(self)
-
     }
 }
 
@@ -34,16 +33,22 @@ extension MainScreenViewController: NSTableViewDelegate {
                 itemView?.layer?.cornerRadius = 4.0
             }
         } else if tableColumn?.identifier == NSUserInterfaceItemIdentifier(rawValue: "typeColumn") {
-            guard let cellView = makeCellView(from: "typeCell") else { return nil }
+//            guard let cellView = makeCellView(from: "typeCell") else { return nil }
+            let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "typeCell")
+            guard let cellView = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as? TypeInfoCellView else { return nil }
+            cellView.delegate = self
+
             var typeValue: String = ""
             if row % 2 == 0 {
                 typeValue = "File"
             } else {
                 typeValue = "PDF Document"
             }
-            cellView.textField?.stringValue = typeValue
 
+            cellView.setTypeTitleText(typeValue)
+//            cellView.textField?.stringValue = typeValue
             itemView = cellView
+
             if #available(macOS 10.13, *) {
                 itemView?.wantsLayer = true
                 itemView?.layer?.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
@@ -75,10 +80,48 @@ extension MainScreenViewController: NSTableViewDataSource {
     }
 }
 
+extension MainScreenViewController: TypeInfoCellViewDelegate {
+    func cell(_ cell: NSTableCellView, needPerform action: TypeInfoCellView.Action) {
+        // TODO: - Continue detect row index
+    }
+}
+
+// MARK: - Extension MainScreenViewController
 extension MainScreenViewController {
-    func makeCellView(from identifier: String) -> NSTableCellView? {
+
+    // MARK: Private functions
+    private func makeCellView(from identifier: String) -> NSTableCellView? {
         let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: identifier)
         guard let view = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as? NSTableCellView else { return nil }
         return view
+    }
+}
+
+// MARK: - TypeInfoCellView
+protocol TypeInfoCellViewDelegate: AnyObject {
+    func cell(_ cell: NSTableCellView, needPerform action: TypeInfoCellView.Action)
+}
+
+final class TypeInfoCellView: NSTableCellView {
+
+    // MARK: - Enumeration
+    enum Action {
+        case tappedTrashButton
+    }
+
+    // MARK: - IBOutlets
+    @IBOutlet private weak var typeTextField: NSTextField?
+    @IBOutlet private weak var trashButton: NSButton?
+
+    // MARK: - Properties
+    weak var delegate: TypeInfoCellViewDelegate?
+
+    // MARK: - Public functions
+    func setTypeTitleText(_ title: String) {
+        typeTextField?.stringValue = title
+    }
+
+    @IBAction private func trashButtonTouchUpInside(_ button: NSButton) {
+        delegate?.cell(self, needPerform: .tappedTrashButton)
     }
 }

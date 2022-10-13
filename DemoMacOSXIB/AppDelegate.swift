@@ -20,8 +20,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let vc = HomeViewController()
+        let vc = MainScreenViewController()
         window.contentViewController = vc
+        window.contentViewController?.view.window?.delegate = self
+        window.center()
+        window.title = "AutoStreem Liteeeeeeee"
+        window.makeKeyAndOrderFront(nil)
     }
 
     func changeRoot(to rootType: RootType) {
@@ -45,6 +49,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
         return true
+    }
+
+    func applicationDidBecomeActive(_ notification: Notification) {
+        NSApplication.shared.unhide(self)
+    }
+}
+
+extension AppDelegate: NSWindowDelegate {
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        NSApplication.shared.hide(self)
+        return false
     }
 }
 
