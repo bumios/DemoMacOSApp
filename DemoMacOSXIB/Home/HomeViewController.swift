@@ -8,6 +8,7 @@
 import Cocoa
 import NMSSH
 import CwlUtils
+import ZIPFoundation
 
 final class HomeViewController: NSViewController {
 
@@ -134,6 +135,29 @@ extension Date {
 extension HomeViewController: DragViewDelegate {
     func dragViewDidReceive(fileURLs: [URL]) {
         print("-----", fileURLs)
+        zipFile(urls: fileURLs)
+    }
+
+    func zipFile(urls: [URL]) {
+        var desktopPath = (NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true) as [String]).first!
+        var archiveURL = URL(fileURLWithPath: desktopPath)
+        archiveURL.appendPathComponent("newArchive.zip")
+        guard let archive = Archive(url: archiveURL, accessMode: .create) else  {
+            return
+        }
+
+        let fileManager = FileManager()
+        var desktopPath = (NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true) as [String]).first!
+//        let currentWorkingPath = fileManager.currentDirectoryPath
+        var sourceURL = URL(fileURLWithPath: urls.first!.absoluteString)
+//        sourceURL.appendPathComponent("MyFiles")
+        var destinationURL = URL(fileURLWithPath: desktopPath)
+        destinationURL.appendPathComponent("bienchodien.zip")
+        do {
+            try fileManager.zipItem(at: sourceURL, to: destinationURL)
+        } catch {
+            print("Creation of ZIP archive failed with error:\(error)")
+        }
     }
 }
 

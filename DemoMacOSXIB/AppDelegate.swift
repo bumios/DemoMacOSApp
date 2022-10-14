@@ -20,7 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let vc = MainScreenViewController()
+//        let vc = MainScreenViewController()
+        let vc = HomeViewController()
         window.contentViewController = vc
         window.contentViewController?.view.window?.delegate = self
         window.center()

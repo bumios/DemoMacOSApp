@@ -21,21 +21,22 @@ class DragView: NSView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        color(to: .clear)
-//        registerForDraggedTypes([.fileURL, .URL, .fileContents])
-        registerForDraggedTypes(NSFilePromiseReceiver.readableDraggedTypes.map{ NSPasteboard.PasteboardType($0) })
+        color(to: .red)
+        registerForDraggedTypes([.fileURL, .URL, .fileContents])
+//        registerForDraggedTypes(NSFilePromiseReceiver.readableDraggedTypes.map{ NSPasteboard.PasteboardType($0) })
     }
-    
     override func draggingEntered(_ draggingInfo: NSDraggingInfo) -> NSDragOperation {
         var containsMatchingFiles = false
         draggingInfo.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: nil)?.forEach {
             eachObject in
+            print((eachObject as? URL))
             if let eachURL = eachObject as? URL {
                 containsMatchingFiles = containsMatchingFiles || fileExtensions.contains(eachURL.pathExtension.lowercased())
                 if containsMatchingFiles { print(eachURL.path) }
             }
         }
-        
+
+        return .copy
         switch (containsMatchingFiles) {
         case true:
             color(to: .secondaryLabelColor)
@@ -51,8 +52,9 @@ class DragView: NSView {
         var matchingFileURLs: [URL] = []
         draggingInfo.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: nil)?.forEach {
             eachObject in
-            if let eachURL = eachObject as? URL,
-               fileExtensions.contains(eachURL.pathExtension.lowercased()) {
+            if let eachURL = eachObject as? URL {
+//            if let eachURL = eachObject as? URL,
+//               fileExtensions.contains(eachURL.pathExtension.lowercased()) {
                 matchingFileURLs.append(eachURL)
             }
         }
