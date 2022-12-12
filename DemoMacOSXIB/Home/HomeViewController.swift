@@ -18,24 +18,14 @@ final class HomeViewController: NSViewController {
     @IBOutlet private weak var dragView: DragView!
 
     let viewModel = HomeViewModel()
+    var draggedFileUrl: URL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         dragView.delegate = self
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            var desktopPath = (NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true) as [String]).first!
-            let myFilePath = desktopPath + "/MyFolder"
-            do {
-                // Xóa hẳn luôn
-//                try FileManager.default.removeItem(atPath: desktopPath + "/MyFolder")
-                // Đưa vô trash
-//                try FileManager.default.trashItem(at: URL(fileURLWithPath: myFilePath), resultingItemURL: nil)
-            }
-            catch {}
-//            NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: desktopPath + "/SelfCollection")
-        }
+        testUploadFilesToFTP()
     }
 
     var alert: NSAlert?
@@ -54,6 +44,20 @@ final class HomeViewController: NSViewController {
 
         // MARK: - Show alert
         showAlert()
+    }
+
+    @IBAction func dragEmailButtonTapped(_ sender: NSButton) {
+        handleDragEmailButton()
+    }
+
+    @IBAction func collectDataButtonTapped(_ sender: NSButton) {
+        if let fileUrl = draggedFileUrl {
+            copyFileToMyFolder(at: fileUrl)
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                self.zipFromMyFolderToDesktop()
+//            }
+            zipFromMyFolderToDesktop()
+        }
     }
 
     private func openPDFUrl() {
@@ -147,31 +151,8 @@ extension Date {
 extension HomeViewController: DragViewDelegate {
     func dragViewDidReceive(fileURLs: [URL]) {
         print("-----", fileURLs)
-        zipFile(urls: fileURLs)
-    }
-
-    func zipFile(urls: [URL]) {
-        let fileManager = FileManager()
-        var desktopPath = (NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true) as [String]).first!
-
-//        let currentWorkingPath = urls.first!.absoluteString
-//        var archiveURL = URL(fileURLWithPath: currentWorkingPath)
-//        archiveURL.appendPathComponent("newArchive.zip")
-//        guard let archive = Archive(url: archiveURL, accessMode: .create) else  {
-//            return
-//        }
-
-//        let fileManager = FileManager()
-        let currentWorkingPath = desktopPath
-        var sourceURL = URL(fileURLWithPath: urls.first!.absoluteString)
-//        sourceURL.appendPathComponent("file.txt")
-        var destinationURL = URL(fileURLWithPath: desktopPath)
-        destinationURL.appendPathComponent("archive.zip")
-        do {
-            try fileManager.zipItem(at: sourceURL, to: destinationURL)
-        } catch {
-            print("Creation of ZIP archive failed with error:\(error)")
-        }
+        draggedFileUrl = fileURLs.first!
+//        zipFile(url: fileURLs.first!)
     }
 }
 
@@ -184,11 +165,11 @@ extension HomeViewController {
     }
 
     struct FTPConfig {
-        static let host: String = ""
-        static let port: Int = 22
-        static let username: String = ""
-        static let password: String = ""
-        static let folderPath: String = "/MyFolderOnFTPServer"
+        static let host: String = "74.122.204.179"//"Duys-Mac-mini.local"//"74.122.204.179"
+        static let port: Int = 22//22
+        static let username: String = "ds-autostreem"//"myftpuser"//ds-autostreem
+        static let password: String = "EnterprisePasswordTea_2021"//"Abc123@@"//"EnterprisePasswordTea_2021"
+        static let folderPath: String = "/AutoStreemLite"//"/My-Local-SFTP-Folder"//"/AutoStreemLite"
     }
 
     struct FTPUploadProgress {
@@ -246,6 +227,81 @@ extension HomeViewController {
                     }
                 }
             }
+        }
+    }
+}
+
+// MARK: - Extension Zip/Move files
+extension HomeViewController {
+
+    private func handleDragEmailButton() {
+        let desktopPath = (NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true) as [String]).first!
+        let myFilePath = desktopPath + "/SelfCollection"
+
+        do {
+            /// `Create file`
+            let manager = FileManager.default
+            try manager.createDirectory(atPath: myFilePath, withIntermediateDirectories: true)
+
+            /// `Open folder`
+            NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: myFilePath)
+        }
+        catch {}
+    }
+
+    func copyFileToMyFolder(at fileUrl: URL) {
+        let desktopPath = (NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true) as [String]).first!
+        var myFolderURL = URL(fileURLWithPath: desktopPath)
+        myFolderURL.appendPathComponent("SelfCollection")
+
+        /// `Create directory`
+        #warning("Tìm hiểu NSFileManagerDelegate để tracking trạng thái tạo file, xóa file kẻo code chạy đồng bộ sẽ toang")
+        do {
+            if !FileManager.default.fileExists(atPath: myFolderURL.path) {
+                try FileManager.default.createDirectory(atPath: myFolderURL.path, withIntermediateDirectories: true, attributes: nil)
+            } else {
+//                try FileManager.default.removeItem(at: myFolderURL)
+            }
+        } catch let error as NSError {
+            print("🧨 \(#function): \(error)")
+        }
+
+        ///  `Copied file & move to new folder`
+        let destinationUrl = myFolderURL.appendingPathComponent(fileUrl.lastPathComponent)
+        do {
+            print("🌱 \(#function)")
+            try FileManager.default.linkItem(at: fileUrl, to: destinationUrl)
+        } catch {
+            print("🧨 \(#function): \(error)")
+        }
+    }
+
+    private func zipFromMyFolderToDesktop() {
+        let fileManager = FileManager()
+        let desktopPath = (NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true) as [String]).first!
+        let myFilePath = desktopPath + "/SelfCollection/"
+        let sourceURL = URL(fileURLWithPath: myFilePath)
+        var destinationURL = URL(fileURLWithPath: desktopPath)
+        destinationURL.appendPathComponent("MyArchieved.zip")
+        do {
+            try fileManager.zipItem(at: sourceURL, to: destinationURL)
+            print("🌱 \(#function)")
+        } catch {
+            print("🧨 \(#function): \(error)")
+        }
+    }
+
+    private func deleteMyFolder() {
+        let desktopPath = (NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true) as [String]).first!
+        let myFilePath = desktopPath + "/SelfCollection"
+
+        do {
+            // Xóa hẳn luôn
+            try FileManager.default.removeItem(atPath: myFilePath)
+            // Đưa vô trash
+            try FileManager.default.trashItem(at: URL(fileURLWithPath: myFilePath), resultingItemURL: nil)
+        } catch {
+            print("🧨 \(#function): \(error)")
         }
     }
 }
